@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+/* Universal Reset */
 * {
     margin: 0;
     padding: 0;
@@ -10,174 +10,68 @@ body {
     color: #ffffff;
     background-color: #0a0a0a;
     margin: 0;
+    overflow: hidden; /* Prevents scrolling */
 }
 
-/* Fixed Header */
-header {
-    background-color: #002366; /* Deep Royal Blue */
-    color: #ffffff;
-    padding: 1.5em 0;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-}
-
-header h1 {
-    font-size: 2em;
-    letter-spacing: 1px;
-}
-
-header p {
-    font-size: 1.1em;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 1.5em;
-    margin-top: 0.5em;
-}
-
-nav a {
-    color: #00e5ff; /* Bright Cyan */
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.6em 1em;
-    transition: background 0.3s ease-in-out;
-}
-
-nav a:hover {
-    background-color: #00e5ff;
-    color: #002366;
-}
-
-/* Hero Section with Enhanced Animation */
+/* Fullscreen Hero Section with Infinite Cloud Animation */
 .hero {
     position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
-    color: #ffffff;
-    padding: 10em 2em;
-    text-align: center;
-    background: linear-gradient(45deg, #0a0a0a, #002366, #1a1a40);
-    background-size: 300% 300%;
-    animation: gradientRotate 15s ease infinite;
+    background-color: #0a0a0a;
 }
 
-/* Gradient Rotation Animation */
-@keyframes gradientRotate {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* Animated Overlay Symbols */
-.symbol-overlay {
+/* Background Video for Infinite Zoom Effect */
+.cloud-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    pointer-events: none;
-    opacity: 0.6;
+    object-fit: cover;
+    z-index: -1;
+    animation: zoomEffect 30s infinite linear;
 }
 
-.symbol {
-    fill: #00e5ff; /* Bright Cyan for symbol base */
-    opacity: 0.15;
-    animation: float 8s ease-in-out infinite;
-}
-
-.symbol1 {
-    position: absolute;
-    top: 10%;
-    left: 15%;
-    width: 120px;
-    animation-delay: 0s;
-}
-
-.symbol2 {
-    position: absolute;
-    top: 40%;
-    right: 15%;
-    width: 140px;
-    animation-delay: 2s;
-}
-
-.symbol3 {
-    position: absolute;
-    bottom: 15%;
-    left: 40%;
-    width: 100px;
-    animation-delay: 4s;
-}
-
-/* Aura Effect */
-.aura {
-    background: radial-gradient(circle, rgba(0, 230, 255, 0.2), transparent);
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: pulse 6s infinite;
-    opacity: 0.4;
-}
-
-/* Floating Animation for Symbols */
-@keyframes float {
+/* Zoom Effect on Video */
+@keyframes zoomEffect {
     0% {
-        transform: translateY(0px) scale(1);
-    }
-    50% {
-        transform: translateY(-20px) scale(1.05);
+        transform: scale(1);
     }
     100% {
-        transform: translateY(0px) scale(1);
+        transform: scale(1.5); /* Adjust scale for desired zoom intensity */
     }
 }
 
-/* Aura Pulse Animation */
-@keyframes pulse {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.4;
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(1.2);
-        opacity: 0.6;
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.4;
-    }
+/* Glass Text Effect */
+.hero h1 {
+    font-size: 8vw;
+    font-weight: bold;
+    color: red;
+    mix-blend-mode: multiply;
+    text-shadow: 2px 2px 20px rgba(255, 0, 0, 0.6);
+    z-index: 10;
+    text-align: center;
+    letter-spacing: 2px;
 }
 
-/* Button */
+/* Button Styling */
 .hero .button {
-    background-color: #00e5ff;
+    display: inline-block;
+    background-color: #00e5ff; /* Bright Cyan */
     color: #002366;
-    padding: 0.8em 1.8em;
+    padding: 0.8em 2em;
     font-weight: bold;
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 1.5em;
     margin-top: 2em;
-    display: inline-block;
     transition: background 0.3s;
+    z-index: 10;
+    border-radius: 4px;
 }
 
 .hero .button:hover {
