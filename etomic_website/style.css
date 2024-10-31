@@ -8,121 +8,140 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #f7f7f7;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    background-color: #0a0a0a;
     margin: 0;
 }
 
 /* Header styling */
 header {
-    background-color: #004d80; /* Siemens-inspired dark blue */
+    background-color: #002366; /* Deep Royal Blue */
     color: #ffffff;
-    padding: 1.5em;
+    padding: 1.5em 0;
     text-align: center;
     position: sticky;
     top: 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
 }
 
 header h1 {
-    font-size: 2em;
+    font-size: 2.5em;
     letter-spacing: 1px;
 }
 
 header p {
-    font-size: 1.1em;
+    font-size: 1.2em;
 }
 
 nav {
-    margin-top: 1em;
     display: flex;
     justify-content: center;
     gap: 1.5em;
+    margin-top: 0.5em;
 }
 
 nav a {
-    color: #ffffff;
+    color: #ffb74d; /* Vibrant Amber for contrast */
     text-decoration: none;
     font-weight: bold;
-    padding: 0.5em 1em;
+    padding: 0.6em 1em;
+    border-radius: 4px;
+    transition: background 0.3s ease-in-out;
 }
 
 nav a:hover {
-    background-color: #0073b1; /* Hover shade similar to Siemens blue */
-    border-radius: 5px;
-}
-
-/* Main Content */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 2em 0;
+    background-color: #ffb74d;
+    color: #002366;
 }
 
 /* Hero Section */
 .hero {
-    background-color: #e6f2ff;
-    padding: 4em 0;
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    padding: 10em 2em;
     text-align: center;
 }
 
 .hero h2 {
-    font-size: 2.5em;
-    color: #004d80;
+    font-size: 3em;
+    color: #ffffff;
+    margin-bottom: 0.5em;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
-    font-size: 1.2em;
-    color: #333;
+    font-size: 1.3em;
     max-width: 700px;
-    margin: auto;
+    margin: 1em auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .hero .button {
-    background-color: #0073b1;
-    color: white;
-    padding: 0.7em 1.5em;
+    background-color: #ffb74d;
+    color: #002366;
+    padding: 0.8em 1.8em;
     border-radius: 5px;
     font-weight: bold;
-    margin-top: 1.5em;
     text-decoration: none;
+    font-size: 1.2em;
+    margin-top: 2em;
+    display: inline-block;
 }
 
 .hero .button:hover {
-    background-color: #004d80;
+    background-color: #ffca7a;
+    color: #002366;
 }
 
-/* Services Layout */
+/* Full-width container */
+.container {
+    width: 100%;
+    padding: 3em 2em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Services Section */
 .services {
     display: flex;
-    flex-wrap: wrap;
     gap: 2em;
-    justify-content: space-around;
-    margin-top: 3em;
+    justify-content: center;
+    margin-top: 2em;
 }
 
 .service-card {
-    background-color: white;
+    background-color: #ffffff;
+    color: #333;
     padding: 2em;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
-    flex: 1 1 300px;
-    max-width: 300px;
+    width: 300px;
+    max-width: 100%;
 }
 
 .service-card h3 {
-    color: #004d80;
-    font-size: 1.4em;
-    margin-bottom: 0.5em;
+    color: #002366;
+    font-size: 1.6em;
+    margin-bottom: 0.6em;
+}
+
+.service-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1em;
 }
 
 /* Footer */
 footer {
-    background-color: #004d80;
+    background-color: #002366;
     color: white;
-    padding: 1em;
+    padding: 1.5em;
     text-align: center;
+    font-size: 0.9em;
 }
