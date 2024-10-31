@@ -1,4 +1,6 @@
-/* Reset basic margins and paddings */
+/* style.css */
+
+/* Universal Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,55 +8,52 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
+    font-family: Arial, sans-serif;
     color: #333;
-    background-color: #f4f4f9;
+    background-color: #f7f7f7;
+    margin: 0;
 }
 
 /* Header styling */
 header {
-    background-color: #1f2937; /* Darker shade for a more modern look */
+    background-color: #004d80; /* Siemens-inspired dark blue */
     color: #ffffff;
     padding: 1.5em;
     text-align: center;
     position: sticky;
     top: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
     font-size: 2em;
-    font-family: 'Poppins', sans-serif;
     letter-spacing: 1px;
-    margin-bottom: 0.5em;
 }
 
 header p {
     font-size: 1.1em;
-    margin-bottom: 0;
 }
 
-/* Navigation */
 nav {
-    margin-top: 0.5em;
+    margin-top: 1em;
     display: flex;
     justify-content: center;
     gap: 1.5em;
 }
 
 nav a {
-    color: #ff6b35;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
+    padding: 0.5em 1em;
 }
 
 nav a:hover {
-    color: #ffffff;
+    background-color: #0073b1; /* Hover shade similar to Siemens blue */
+    border-radius: 5px;
 }
 
-/* Container styling */
+/* Main Content */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -62,140 +61,68 @@ nav a:hover {
     padding: 2em 0;
 }
 
-/* Sections */
-.section {
-    padding: 3em 0;
-    text-align: center;
-}
-
-.section h2 {
-    font-size: 2em;
-    color: #1f2937;
-    margin-bottom: 0.5em;
-}
-
-.section p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #555;
-    max-width: 800px;
-    margin: 0.5em auto;
-}
-
-.button {
-    background-color: #ff6b35;
-    color: white;
-    padding: 0.6em 1.2em;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.button:hover {
-    background-color: #e65522;
-}
-
-/* Form Styling */
-form {
-    max-width: 600px;
-    margin: auto;
-    text-align: left;
-}
-
-form label {
-    display: block;
-    font-weight: bold;
-    margin-top: 1em;
-    color: #333;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 0.8em;
-    margin-top: 0.5em;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-form button {
-    margin-top: 1em;
-    width: 100%;
-    font-size: 1.1em;
-}
-
-/* Footer */
-footer {
-    background-color: #1f2937;
-    color: white;
-    padding: 1em;
-    text-align: center;
-    font-size: 0.9em;
-    margin-top: 2em;
-}
-
-footer p {
-    margin: 0;
-}
-
 /* Hero Section */
 .hero {
-    background-image: url('https://source.unsplash.com/1600x900/?engineering,technology');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 5em 0;
+    background-color: #e6f2ff;
+    padding: 4em 0;
     text-align: center;
 }
 
-.hero-content h2 {
+.hero h2 {
     font-size: 2.5em;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    margin-bottom: 0.5em;
+    color: #004d80;
 }
 
-.hero-content p {
+.hero p {
     font-size: 1.2em;
-    max-width: 600px;
+    color: #333;
+    max-width: 700px;
     margin: auto;
 }
 
-.hero-content .button {
-    margin-top: 1em;
-    padding: 0.8em 1.5em;
-    font-size: 1.1em;
+.hero .button {
+    background-color: #0073b1;
+    color: white;
+    padding: 0.7em 1.5em;
     border-radius: 5px;
-    color: #ffffff;
+    font-weight: bold;
+    margin-top: 1.5em;
+    text-decoration: none;
+}
+
+.hero .button:hover {
+    background-color: #004d80;
 }
 
 /* Services Layout */
 .services {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
     gap: 2em;
-    margin-top: 2em;
+    justify-content: space-around;
+    margin-top: 3em;
 }
 
-.service {
-    background-color: #ffffff;
+.service-card {
+    background-color: white;
     padding: 2em;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex: 1 1 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    flex: 1 1 300px;
+    max-width: 300px;
 }
 
-.service h3 {
-    color: #ff6b35;
-    font-size: 1.5em;
+.service-card h3 {
+    color: #004d80;
+    font-size: 1.4em;
     margin-bottom: 0.5em;
 }
 
-.service p {
-    font-size: 1em;
-    color: #555;
-    line-height: 1.6;
+/* Footer */
+footer {
+    background-color: #004d80;
+    color: white;
+    padding: 1em;
+    text-align: center;
 }
