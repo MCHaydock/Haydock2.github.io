@@ -1,5 +1,3 @@
-/* style.css */
-
 /* Universal Reset */
 * {
     margin: 0;
@@ -8,31 +6,33 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     color: #ffffff;
     background-color: #0a0a0a;
     margin: 0;
 }
 
-/* Header styling */
+/* Fixed Header styling */
 header {
     background-color: #002366; /* Deep Royal Blue */
     color: #ffffff;
     padding: 1.5em 0;
     text-align: center;
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
+    left: 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
 
 header h1 {
-    font-size: 2.5em;
+    font-size: 2em;
     letter-spacing: 1px;
 }
 
 header p {
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 nav {
@@ -43,20 +43,19 @@ nav {
 }
 
 nav a {
-    color: #ffb74d; /* Vibrant Amber for contrast */
+    color: #00e5ff; /* Bright Cyan */
     text-decoration: none;
     font-weight: bold;
     padding: 0.6em 1em;
-    border-radius: 4px;
     transition: background 0.3s ease-in-out;
 }
 
 nav a:hover {
-    background-color: #ffb74d;
+    background-color: #00e5ff;
     color: #002366;
 }
 
-/* Hero Section */
+/* Hero Section with Animation */
 .hero {
     background-image: url('images/background.jpg');
     background-size: cover;
@@ -64,6 +63,18 @@ nav a:hover {
     color: #ffffff;
     padding: 10em 2em;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Slight overlay for text readability */
 }
 
 .hero h2 {
@@ -71,39 +82,69 @@ nav a:hover {
     color: #ffffff;
     margin-bottom: 0.5em;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    position: relative;
 }
 
 .hero p {
-    font-size: 1.3em;
+    font-size: 1.2em;
     max-width: 700px;
     margin: 1em auto;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    position: relative;
 }
 
 .hero .button {
-    background-color: #ffb74d;
+    background-color: #00e5ff;
     color: #002366;
     padding: 0.8em 1.8em;
-    border-radius: 5px;
     font-weight: bold;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin-top: 2em;
     display: inline-block;
+    transition: background 0.3s;
+    z-index: 1;
+    position: relative;
 }
 
 .hero .button:hover {
-    background-color: #ffca7a;
+    background-color: #00ffff;
     color: #002366;
 }
 
-/* Full-width container */
+/* Animation Overlay */
+.hero-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 230, 255, 0.3) 10%, transparent 10%);
+    background-size: 3em 3em;
+    animation: floating 10s linear infinite;
+    opacity: 0.6;
+    z-index: 0;
+}
+
+@keyframes floating {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 100%;
+    }
+}
+
+/* Main Content Container */
 .container {
     width: 100%;
-    padding: 3em 2em;
+    padding: 5em 2em;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 80px; /* Offset for fixed header */
 }
 
 /* Services Section */
@@ -118,11 +159,11 @@ nav a:hover {
     background-color: #ffffff;
     color: #333;
     padding: 2em;
-    border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 300px;
     max-width: 100%;
+    border: none;
 }
 
 .service-card h3 {
@@ -133,7 +174,7 @@ nav a:hover {
 
 .service-card img {
     width: 100%;
-    border-radius: 8px;
+    border: none;
     margin-bottom: 1em;
 }
 
