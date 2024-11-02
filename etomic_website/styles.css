@@ -24,6 +24,7 @@ body {
     color: #fff;
     padding: 1.5rem 0;
     text-align: center;
+    position: relative;
 }
 
 .navbar {
@@ -31,11 +32,20 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
+    position: relative; /* Keeps the nav links in their own place */
+}
+
+.logo-container {
+    position: fixed; /* Makes the logo fixed in the top left */
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    z-index: 1000; /* Ensures the logo stays above other content */
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    width: 80px; /* Adjust the size of your logo */
+    height: auto;
 }
 
 .nav-links {
