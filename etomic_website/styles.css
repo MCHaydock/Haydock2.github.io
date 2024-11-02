@@ -46,6 +46,7 @@ body {
 .logo {
     width: 200px; /* Adjust the size of your logo here */
     height: auto;
+    filter: invert(100%);
 }
 
 .nav-links {
