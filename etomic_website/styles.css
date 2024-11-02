@@ -87,6 +87,7 @@ body {
 main {
     flex: 1; /* This allows the main content to grow and push the footer down */
     padding: 2rem;
+    background-color: #f9f9f9; /* Keeps the main background a light color */
 }
 
 .service-card {
