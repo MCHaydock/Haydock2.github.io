@@ -44,7 +44,7 @@ body {
 }
 
 .logo {
-    width: 120px; /* Adjust the size of your logo here */
+    width: 160px; /* Adjust the size of your logo here */
     height: auto;
     mix-blend-mode: difference; /* Inverts the color based on the background */
 }
