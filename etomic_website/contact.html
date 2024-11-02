@@ -7,16 +7,19 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">Etomic</div>
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
-        <h1>Contact Etomic</h1>
+        <div class="page-banner">
+            <h1>Contact Us</h1>
+        </div>
     </header>
     <main>
         <section class="contact-form">
@@ -31,12 +34,12 @@
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" required></textarea>
                 
-                <button type="submit">Send Message</button>
+                <button type="submit" class="submit-button">Send Message</button>
             </form>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2024 Etomic. All rights reserved.</p>
+    <footer class="main-footer">
+        <p>&copy; 2024 Etomic. All rights reserved. | <a href="privacy.html">Privacy Policy</a></p>
     </footer>
 </body>
 </html>
