@@ -47,6 +47,7 @@ body {
     height: auto;
     filter: invert(100%);
     mix-blend-mode: difference; /* Inverts the color based on the background */
+    background-blend-mode: difference;
 }
 
 .nav-links {
