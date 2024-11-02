@@ -43,7 +43,7 @@ body {
 }
 
 .logo {
-    width: 80px; /* Adjust the size of your logo */
+    width: 160px; /* Adjust the size of your logo */
     height: auto;
     mix-blend-mode: difference; 
 }
