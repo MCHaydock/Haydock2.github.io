@@ -40,12 +40,12 @@ body {
     left: 0;
     padding: 1rem; /* Padding around the logo */
     z-index: 1000; /* Ensures the logo stays above other content */
+    mix-blend-mode: difference; /* Inverts the color based on the background */
 }
 
 .logo {
     width: 120px; /* Adjust the size of your logo here */
     height: auto;
-    mix-blend-mode: difference; /* Inverts the color based on the background */
 }
 
 .nav-links {
