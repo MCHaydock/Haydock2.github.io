@@ -29,17 +29,16 @@ body {
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Ensures space between logo and nav links */
     align-items: center;
     padding: 0 2rem;
-    position: relative; /* Keeps the nav links in their own place */
 }
 
 .logo-container {
-    position: fixed; /* Makes the logo fixed in the top left */
+    position: fixed; /* Keeps the logo fixed in the top left */
     top: 0;
     left: 0;
-    padding: 1rem;
+    padding: 1rem; /* Padding around the logo */
     z-index: 1000; /* Ensures the logo stays above other content */
 }
 
