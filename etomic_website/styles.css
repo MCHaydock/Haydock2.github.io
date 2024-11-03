@@ -35,7 +35,6 @@ body {
     align-items: center;
     padding: 1rem;
     background: #003366
-
 }
 
 .logo-container {
@@ -69,12 +68,19 @@ body {
     object-fit: cover; /* Cover the entire background */
 }
 
+.bg-logo-container {
+    position: absolute; /* Keeps the logo fixed in the top left */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire background */
+    mix-blend-mode: difference; /* Inverts the color based on the background */
+    z-index: -1; /* Keep it behind other elements */
+}
+
 .bg-logo {
-    position: absolute;
-    padding: 2rem;
-    top:50%;
-    left:50%;
-    width: 100%; /* Adjust the size of your logo here */
+    width: 100%;
     height: 100%;
     object-fit: cover; /* Cover the entire background */
     filter: invert(100%);
@@ -99,25 +105,25 @@ body {
 }
 
 .hero {
-    padding: 4rem 2rem;
-    height: 500px;
     position: relative;
+    height: 80vh;
     overflow: hidden; /* Hide anything that overflows */
 }
 
 .hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative; /* Keeps the logo fixed in the top left */
+    padding: 4rem 2rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     text-align: center;
     color: white;
     z-index: 1; /* Make sure text appears above the video */
-    padding: 4rem 2rem;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 5.2vw;
     margin-bottom: 1rem;
 }
 
