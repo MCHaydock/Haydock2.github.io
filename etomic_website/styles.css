@@ -9,9 +9,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /*background-color: #003366;*/ /* Light background for main content */
     color: #333;
-    /*background: #003366*/
 }
 
 body {
@@ -21,9 +19,7 @@ body {
 }
 
 .main-header {
-    /*background-color: #003366;*/ /* Blue background */
     color: #fff;
-    /*padding: 1.5rem 0;*/
     text-align: center;
     position: relative;
     object-fit: fill;
@@ -31,23 +27,22 @@ body {
 
 .navbar {
     display: flex;
-    justify-content: space-between; /* Ensures space between logo and nav links */
+    justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background: #003366
+    background-color: rgba(0, 51, 102, 0.75)
 }
 
 .logo-container {
-    position: fixed; /* Keeps the logo fixed in the top left */
+    position: absolute; 
     top: 0;
     left: 0;
-    padding: 1rem; /* Padding around the logo */
-    z-index: 1000; /* Ensures the logo stays above other content */
-    mix-blend-mode: difference; /* Inverts the color based on the background */
+    padding: 1rem;
+    z-index: 1000;
 }
 
 .logo {
-    width: 200px; /* Adjust the size of your logo here */
+    width: 150px;
     height: auto;
     filter: invert(100%);
 }
@@ -60,6 +55,7 @@ body {
     height: 100%;
     object-fit: cover; /* Cover the entire background */
     z-index: -1; /* Keep it behind other elements */
+    filter: brightness(0.5);
 }
 
 .bg-video {
@@ -77,6 +73,7 @@ body {
     object-fit: cover; /* Cover the entire background */
     mix-blend-mode: difference; /* Inverts the color based on the background */
     z-index: -1; /* Keep it behind other elements */
+    filter: brightness(0.5);
 }
 
 .bg-logo {
@@ -101,29 +98,29 @@ body {
 }
 
 .nav-links a:hover {
-    color: #ff9900;
+    color: #ebff00;
 }
 
 .hero {
     position: relative;
-    height: 80vh;
+    height: 100vh;
     overflow: hidden; /* Hide anything that overflows */
 }
 
 .hero-content {
-    position: relative; /* Keeps the logo fixed in the top left */
-    padding: 4rem 2rem;
-    top: 0;
-    left: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 100%;
-    height: 100%;
+    transform: translate(-50%, -50%);
+    padding: 4rem 2rem;
     text-align: center;
     color: white;
     z-index: 1; /* Make sure text appears above the video */
 }
 
 .hero h1 {
-    font-size: 5.2vw;
+    font-size: 10vw;
     margin-bottom: 1rem;
 }
 
@@ -134,16 +131,16 @@ body {
 
 .cta-button {
     display: inline-block;
-    background-color: #ff9900;
-    color: white;
+    background-color: #ebff00;
+    color: black;
     padding: 0.75rem 1.5rem;
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: filter 0.5s ease
 }
 
 .cta-button:hover {
-    background-color: #e68a00;
+    filter: brightness(1.2);
 }
 
 main {
@@ -175,7 +172,7 @@ main {
 }
 
 .footer-link {
-    color: #ff9900;
+    color: #ebff00;
     text-decoration: none;
     font-size: 0.9rem;
     margin-top: 0.5rem;
