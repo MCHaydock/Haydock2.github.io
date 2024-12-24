@@ -53,7 +53,7 @@ body {
     --navbar-text-color: white;
 }
 
-.nav-logo-container {
+.nav-logo {
     position: absolute; /* Positions the logo in the center */
     left: 50%; /* Horizontally centers the logo */
     transform: translateX(-50%); /* Adjusts for the logo's width to center it perfectly */
@@ -62,21 +62,24 @@ body {
     /* margin-left: auto; */
 }
 
-.nav-logo {
+.nav-logo img {
     width: 50px;
     height: auto;
     filter: invert(100%) brightness(0.2);
 }
 
-.nav-links {
-    list-style: none;
+.nav-left {
+/*    list-style: none;
     display: flex;
-    gap: 1.5rem;
-    float: right;
-    /* margin-left: auto; */
+    gap: 1.5rem;*/
+    margin-right: auto;
 }
 
-.nav-links a {
+.nav-right {
+    margin-left: auto;
+}
+
+.nav-left a, .nav-right a {
     color: inherit;
     background-color: inherit;
     text-decoration: none;
@@ -85,7 +88,7 @@ body {
     position: relative;
 }
 
-.nav-links a::after {
+.nav-left a::after, .nav-right a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -98,7 +101,7 @@ body {
     transition: all 0.1s ease;
 }
 
-.nav-links a:hover::after {
+.nav-left a:hover::after, .nav-right a:hover::after {
     transform: scaleX(1);
 }
 
