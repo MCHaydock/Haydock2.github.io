@@ -4,11 +4,12 @@
     padding: 0;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Play', sans-serif;
     color: #333;
 }
 
@@ -26,27 +27,65 @@ body {
 }
 
 .navbar {
+    --navbar-bg-color: rgb(255, 255, 255);
+    --navbar-text-color: rgba(0, 0, 0, 0.8);
     position: fixed;
     display: flex;
     width: 100%;
-    justify-content: space-between;
-    align-items: center;
     padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: var(--navbar-bg-color);
+    color: var(--navbar-text-color);
+    /* backdrop-filter: blur(46px); */
     transform: translateY(0);
-    transition: transform 0.1s ease-in-out, background 0.1s ease-in-out, color 0.1s ease-in-out, opacity 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    z-index: 999;
 }
 
 .navbar.hidden {
     opacity: 0;
+    transform: translateY(-100%);
 }
 
 .navbar.transparent {
-    background: transparent;
+    --navbar-bg-color: transparent;
+    --navbar-text-color: white;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin-left: auto;
+}
+
+.nav-links a {
+    color: inherit;
+    background-color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #0000FF;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.1s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
 }
 
 .logo-container {
-    position: absolute; 
+    position: absolute;
     top: 0;
     left: 0;
     padding: 1rem;
@@ -60,63 +99,45 @@ body {
 }
 
 .video-background {
-    position: absolute; /* Position it absolutely within the body */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cover the entire background */
-    z-index: -1; /* Keep it behind other elements */
+    object-fit: cover;
+    z-index: -1;
     filter: brightness(0.5);
 }
 
 .bg-video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cover the entire background */
+    object-fit: cover;
 }
 
 .bg-logo-container {
-    position: absolute; /* Keeps the logo fixed in the top left */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cover the entire background */
-    mix-blend-mode: difference; /* Inverts the color based on the background */
-    z-index: -1; /* Keep it behind other elements */
+    object-fit: cover;
+    mix-blend-mode: difference;
+    z-index: -1;
     filter: brightness(0.5);
 }
 
 .bg-logo {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cover the entire background */
+    object-fit: cover;
     filter: invert(100%);
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    margin-left: auto; /* Pushes nav links to the right */
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: #ebff00;
 }
 
 .hero {
     position: relative;
     height: 100vh;
-    overflow: hidden; /* Hide anything that overflows */
+    overflow: hidden;
 }
 
 .hero-content {
@@ -128,7 +149,7 @@ body {
     padding: 4rem 2rem;
     text-align: center;
     color: white;
-    z-index: 1; /* Make sure text appears above the video */
+    z-index: 1;
 }
 
 .hero h1 {
@@ -143,10 +164,9 @@ body {
 
 .cta-button {
     display: inline-block;
-    background-color: #ebff00;
-    color: black;
+    background-color: #0000FF;
+    color: white;
     padding: 0.75rem 1.5rem;
-    border-radius: 5px;
     text-decoration: none;
     transition: filter 0.5s ease
 }
@@ -156,9 +176,11 @@ body {
 }
 
 main {
-    flex: 1; /* This allows the main content to grow and push the footer down */
+    flex: 1;
+    /* This allows the main content to grow and push the footer down */
     padding: 2rem;
-    background-color: #f9f9f9; /* Light background for main content */
+    background-color: #f9f9f9;
+    /* Light background for main content */
 }
 
 .services {
@@ -175,8 +197,10 @@ main {
 
 .services-grid {
     display: grid;
-    gap: 2rem; /* Space between the grid items */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 2rem;
+    /* Space between the grid items */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Responsive columns */
     padding: 0 2rem;
 }
 
@@ -201,8 +225,10 @@ main {
 }
 
 .service-card:hover {
-    transform: translateY(-5px); /* Slight lift effect on hover */
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    transform: translateY(-5px);
+    /* Slight lift effect on hover */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    /* Enhanced shadow on hover */
 }
 
 .main-footer {
