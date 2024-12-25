@@ -6,12 +6,12 @@ const logocontainer = document.querySelector('.logo-container');
 window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
 
-    if (currentScrollY > lastScrollY) {
-        navbar.classList.add('hidden');
-    } else {
-        navbar.classList.remove('hidden');
-        console.log("Navbar classes:", navbar.classList);
-    }
+    // if (currentScrollY > lastScrollY) {
+    //     navbar.classList.add('hidden');
+    // } else {
+    //     navbar.classList.remove('hidden');
+    //     console.log("Navbar classes:", navbar.classList);
+    // }
 
     if (!navbar.classList.contains('hidden')) {
         if (currentScrollY > 0) {
