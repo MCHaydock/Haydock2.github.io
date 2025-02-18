@@ -13,19 +13,24 @@ window.addEventListener('scroll', () => {
     //     console.log("Navbar classes:", navbar.classList);
     // }
 
-    if (!navbar.classList.contains('hidden')) {
+    // if (!navbar.classList.contains('hidden')) {
         if (currentScrollY > 0) {
             navbar.classList.remove('transparent'); //Transparent
         } else {
             navbar.classList.add('transparent');
         }
-    }
+    // }
 
-    if (currentScrollY > 0) {
-        logocontainer.classList.add('hidden');
-    } else {
-        logocontainer.classList.remove('hidden');
-    }
+    // if (currentScrollY > 0) {
+    //     logocontainer.classList.add('hidden');
+    // } else {
+    //     logocontainer.classList.remove('hidden');
+    // }
 
     lastScrollY = currentScrollY;
+});
+
+document.getElementById("dropdown-icon").addEventListener("click", function () {
+    const dropdownMenu = document.getElementById("dropdown-menu");
+    dropdownMenu.style.display = dropdownMenu.style.display === "flex" ? "none" : "flex";
 });
