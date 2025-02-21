@@ -1,34 +1,25 @@
 // JavaScript source code
-let lastScrollY = 0;
-const navbar = document.querySelector('.navbar');
-const logocontainer = document.querySelector('.logo-container');
 
-window.addEventListener('scroll', () => {
-    const currentScrollY = window.scrollY;
+let ticking = false;
+window.addEventListener("scroll", () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        updateNavbar();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
 
-    // if (currentScrollY > lastScrollY) {
-    //     navbar.classList.add('hidden');
-    // } else {
-    //     navbar.classList.remove('hidden');
-    //     console.log("Navbar classes:", navbar.classList);
-    // }
-
-    // if (!navbar.classList.contains('hidden')) {
-        if (currentScrollY > 0) {
-            navbar.classList.remove('transparent'); //Transparent
-        } else {
-            navbar.classList.add('transparent');
-        }
-    // }
-
-    // if (currentScrollY > 0) {
-    //     logocontainer.classList.add('hidden');
-    // } else {
-    //     logocontainer.classList.remove('hidden');
-    // }
-
-    lastScrollY = currentScrollY;
-});
+function updateNavbar()
+{ 
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 0) {
+        navbar.classList.remove('transparent'); //Transparent
+    } else {
+        navbar.classList.add('transparent');
+    }
+}
 
 document.getElementById("dropdown-icon").addEventListener("click", function () {
     const dropdownMenu = document.getElementById("dropdown-menu");
