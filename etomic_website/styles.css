@@ -40,7 +40,7 @@ main {
     align-items: center; 
     padding: 1rem;
     color: var(--navbar-text-color);
-    transition: all 1s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .navbar.transparent {
@@ -57,9 +57,8 @@ main {
     width: calc(var(--navbar-height) * cos(30deg));
     height: 100%;
     background-color: var(--navbar-text-color);
-    -webkit-mask-image: url('./Etomic.png');
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: contain;
+    -webkit-clip-path: url(1pxInkClipVC.svg#path);
+    clip-path: url(1pxInkClipVC.svg#path);
     transition: all 0.5s ease-in-out;
 }
 
@@ -140,26 +139,29 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
     filter: brightness(0.5);
+    transform: scaleY(-1);
 }
 
 .bg-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: max(100vh, 100vw * (9 / 16));
 }
 
 .bg-logo-container {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 50%;
+    left: 50%;
+    width: 100vmax;
+    height: 100vmax;
     object-fit: cover;
-    mix-blend-mode: difference;
-    z-index: -1;
-    filter: brightness(0.5);
+    filter: brightness(0.6);
+    -webkit-clip-path: url(1pxInkClipVC.svg#path);
+    clip-path: url(1pxInkClipVC.svg#path);
+    transform: translate(-50%, -50%);
 }
 
 .bg-logo {
@@ -169,22 +171,13 @@ main {
     filter: invert(100%);
 }
 
-.video-mask {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    -webkit-mask-image: url('./Etomic.png');
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: contain;
-    -webkit-mask-position: center;
-}
-
 .hero {
     position: relative;
     overflow: hidden;
     width: 100%;
     height: 100vh;
-    clip-path: polygon(0 0,0 100%,100% 100%,100% 0);
+    clip-path: fill-box;
+    text-shadow:0px 0px 60px #000000;
 }
 
 .hero-content {
